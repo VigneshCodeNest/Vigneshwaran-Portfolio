@@ -1,4 +1,4 @@
-import { Bot, Layers, Server, type LucideIcon } from 'lucide-react'
+import { Code2, Layers, Server, type LucideIcon } from 'lucide-react'
 
 export const aboutParagraphs = [
   'I am Vigneshwaran B, a Java Full Stack Developer with a strong foundation in Java, Python, web development, Spring Boot, Django, REST APIs, and MySQL.',
@@ -15,6 +15,6 @@ export interface AboutHighlight {
 
 export const aboutHighlights: AboutHighlight[] = [
   { title: 'Backend Development', detail: 'Java • Spring Boot • REST APIs', icon: Server },
-  { title: 'Full Stack Development', detail: 'HTML • CSS • JavaScript • React-ready development', icon: Layers },
-  { title: 'AI & Automation', detail: 'Python • NLP • LLM Applications', icon: Bot },
+  { title: 'Full Stack Development', detail: 'React.js • Spring Boot • MySQL', icon: Layers },
+  { title: 'Frontend Development', detail: 'HTML • CSS • JavaScript', icon: Code2 },
 ]

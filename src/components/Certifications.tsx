@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { m, type Variants } from 'framer-motion'
-import { Award, Calendar, CheckCircle2, Download, ExternalLink, Eye, ShieldCheck, X } from 'lucide-react'
+import { Award, Calendar, CheckCircle2, Download, ExternalLink, Eye, X } from 'lucide-react'
 import { certificates, type Certificate } from '../data/certifications'
 import Reveal from './ui/Reveal'
 import SectionHeading from './ui/SectionHeading'
@@ -120,40 +120,6 @@ export default function Certifications() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Actions Footer */}
-              <div className="mt-6 flex flex-wrap items-center gap-2.5 border-t border-white/10 pt-4">
-                <button
-                  type="button"
-                  onClick={() => openPreview(cert)}
-                  className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-cyan-400/10 px-3.5 text-xs font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20"
-                >
-                  <Eye size={14} aria-hidden="true" />
-                  View
-                </button>
-
-                <a
-                  href={cert.pdfUrl}
-                  download={`${cert.id}.pdf`}
-                  className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-white/15 px-3.5 text-xs font-semibold text-slate-200 transition-colors hover:border-white/30 hover:text-white"
-                >
-                  <Download size={14} aria-hidden="true" />
-                  Download PDF
-                </a>
-
-                {cert.verifyUrl && (
-                  <a
-                    href={cert.verifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-purple-500/30 bg-purple-950/20 px-3.5 text-xs font-semibold text-purple-200 transition-colors hover:border-purple-400/50 hover:bg-purple-950/40"
-                  >
-                    <ShieldCheck size={14} className="text-purple-400" />
-                    Verify on Credly
-                    <ExternalLink size={12} className="opacity-70" />
-                  </a>
-                )}
               </div>
             </m.article>
           ))}

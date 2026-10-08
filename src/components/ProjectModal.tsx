@@ -139,7 +139,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             data-autofocus
             onClick={onClose}
             aria-label="Close project details"
-            className="flex shrink-0 items-center gap-1.5 rounded-xl border border-white/20 bg-ink-800 px-3.5 py-2 text-xs font-semibold text-white shadow-md transition-all duration-200 hover:border-red-400/60 hover:bg-red-500/20 hover:text-red-200 focus-visible:ring-2 focus-visible:ring-cyan-400"
+            className="mt-[10px] flex shrink-0 items-center gap-1.5 rounded-xl border border-white/20 bg-ink-800 px-3.5 py-2 text-xs font-semibold text-white shadow-md transition-all duration-200 hover:border-red-400/60 hover:bg-red-500/20 hover:text-red-200 focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             <X size={18} className="stroke-[2.5]" aria-hidden="true" />
             <span>Close</span>
