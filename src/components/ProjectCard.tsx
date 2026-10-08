@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { m, type Variants } from 'framer-motion'
-import { Check, Github, Globe } from 'lucide-react'
+import { Check, Github } from 'lucide-react'
 import type { Project } from '../data/projects'
-import ConnectlyVisual from './ConnectlyVisual'
+import ArchitectureDiagram from './ui/ArchitectureDiagram'
 import FlowDiagram from './ui/FlowDiagram'
 import LinkButton from './ui/LinkButton'
 
@@ -35,10 +35,10 @@ function ProjectCard({ project, onOpen }: ProjectCardProps) {
       {project.subtitle && <p className="mt-1 text-sm font-medium text-slate-400">{project.subtitle}</p>}
       <p className="mt-4 leading-relaxed text-slate-300">{project.cardDescription || project.description}</p>
 
-      {/* Visual representation */}
+      {/* Architecture / Visual representation */}
       <div className="mt-6">
-        {project.hasCustomCardVisual ? (
-          <ConnectlyVisual />
+        {project.useCustomArchitectureDiagram ? (
+          <ArchitectureDiagram compact />
         ) : (
           <div className="rounded-xl border border-white/10 bg-ink-950/50 p-4">
             <h4 className="mb-3 text-sm font-semibold text-white">{project.architectureTitle}</h4>
@@ -82,13 +82,6 @@ function ProjectCard({ project, onOpen }: ProjectCardProps) {
       </ul>
 
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-8">
-        <div
-          className="reveal-links flex flex-wrap gap-2"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <LinkButton href={project.github} label="GitHub" icon={Github} />
-          {project.demo && <LinkButton href={project.demo} label="Live Demo" icon={Globe} />}
-        </div>
         <button
           type="button"
           aria-haspopup="dialog"
@@ -101,6 +94,12 @@ function ProjectCard({ project, onOpen }: ProjectCardProps) {
           View details
           <span className="sr-only">: {project.title}</span>
         </button>
+        <div
+          className="flex flex-wrap items-center gap-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <LinkButton href={project.github} label="GitHub" icon={Github} />
+        </div>
       </div>
     </m.article>
   )

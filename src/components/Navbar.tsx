@@ -46,9 +46,16 @@ export default function Navbar() {
         <a
           href="#home"
           aria-label={`${profile.name}, back to top`}
-          className="font-mono text-xl font-bold tracking-tight text-white"
+          className="flex items-center gap-2.5 font-mono text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-90"
         >
-          VB<span className="text-cyan-400">.</span>
+          <img
+            src={profile.avatar}
+            alt=""
+            className="h-8 w-8 rounded-full object-cover object-top ring-1 ring-cyan-400/40"
+          />
+          <span>
+            VB<span className="text-cyan-400">.</span>
+          </span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">

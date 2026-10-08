@@ -41,15 +41,21 @@ export default function Hero() {
 
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <m.div
-            {...enter(0)}
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium text-emerald-200"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 motion-safe:animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Open to Software Development Opportunities
+          <m.div {...enter(0)} className="flex flex-wrap items-center gap-3">
+            <div className="relative flex h-11 w-11 shrink-0 overflow-hidden rounded-full border border-cyan-400/40 bg-ink-900 shadow-md shadow-cyan-400/20">
+              <img
+                src={profile.avatar}
+                alt={profile.name}
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium text-emerald-200">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 motion-safe:animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              Open to Software Development Opportunities
+            </div>
           </m.div>
 
           <m.p {...enter(1)} className="mt-7 font-mono text-sm tracking-wide text-cyan-300">
@@ -75,27 +81,11 @@ export default function Hero() {
 
           <m.div {...enter(5)} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <m.a
-              href="#projects"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className={`${btn} bg-gradient-to-r from-cyan-400 to-sky-500 text-ink-950 shadow-lg shadow-cyan-500/20`}
-            >
-              View My Projects
-            </m.a>
-            <m.a
-              href="#contact"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className={`${btn} border border-cyan-400/50 text-cyan-200 transition-colors hover:bg-cyan-400/10`}
-            >
-              Contact Me
-            </m.a>
-            <m.a
               href={profile.resumeUrl}
               download="Vigneshwaran_B_Resume.pdf"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className={`${btn} border border-white/15 text-slate-200 transition-colors hover:border-white/30 hover:text-white`}
+              className={`${btn} bg-gradient-to-r from-cyan-400 to-sky-500 text-ink-950 shadow-lg shadow-cyan-500/20`}
             >
               <Download size={16} aria-hidden="true" />
               Download Resume
@@ -106,7 +96,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className={`${btn} border border-white/15 text-slate-200 transition-colors hover:border-cyan-400/40 hover:text-cyan-200`}
+              className={`${btn} border border-cyan-400/50 text-cyan-200 transition-colors hover:bg-cyan-400/10`}
             >
               <Eye size={16} aria-hidden="true" />
               View Resume

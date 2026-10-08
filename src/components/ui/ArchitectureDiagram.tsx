@@ -1,6 +1,81 @@
-import { ArrowDown, Database, Globe, Key, Network, Server, Shield, Layers, Workflow } from 'lucide-react'
+import { ArrowDown, Database, Globe, Key, Network, Server, Shield, Layers, Workflow, Zap } from 'lucide-react'
 
-export default function ArchitectureDiagram() {
+interface ArchitectureDiagramProps {
+  compact?: boolean
+}
+
+export default function ArchitectureDiagram({ compact = false }: ArchitectureDiagramProps) {
+  if (compact) {
+    return (
+      <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-3.5 sm:p-4">
+        <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+          Real-Time Architecture
+        </h4>
+        <div className="flex flex-col items-center gap-1.5 text-xs font-mono">
+          {/* Frontend */}
+          <div className="flex w-full items-center justify-between rounded-lg border border-cyan-400/30 bg-cyan-950/30 px-3 py-2">
+            <span className="flex items-center gap-2 font-semibold text-cyan-200">
+              <Globe size={14} className="text-cyan-400 shrink-0" />
+              React.js Frontend
+            </span>
+            <span className="text-[10px] text-slate-400">UI / WebSocket Client</span>
+          </div>
+
+          <div className="flex items-center gap-1 py-0.5 text-[11px] text-slate-400">
+            <ArrowDown size={13} className="text-cyan-400 shrink-0" />
+            <span>REST API / WebSocket</span>
+            <ArrowDown size={13} className="text-cyan-400 shrink-0" />
+          </div>
+
+          {/* Spring Boot Backend Container */}
+          <div className="w-full rounded-lg border border-white/15 bg-ink-900/90 p-2.5">
+            <div className="flex items-center justify-between border-b border-white/10 pb-1.5 mb-2">
+              <span className="flex items-center gap-1.5 font-semibold text-sky-200 text-xs">
+                <Server size={14} className="text-sky-400 shrink-0" />
+                Spring Boot Backend
+              </span>
+              <span className="text-[10px] text-slate-400">Java Core</span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-1.5 text-[11px]">
+              <div className="flex items-center gap-1.5 rounded bg-purple-950/30 border border-purple-500/20 px-2 py-1 text-purple-200">
+                <Shield size={11} className="text-purple-400 shrink-0" />
+                <span className="truncate">Spring Security / JWT</span>
+              </div>
+              <div className="flex items-center gap-1.5 rounded bg-cyan-950/30 border border-cyan-500/20 px-2 py-1 text-cyan-200">
+                <Workflow size={11} className="text-cyan-400 shrink-0" />
+                <span className="truncate">WebSocket Engine</span>
+              </div>
+              <div className="flex items-center gap-1.5 rounded bg-blue-950/30 border border-blue-500/20 px-2 py-1 text-blue-200">
+                <Network size={11} className="text-blue-400 shrink-0" />
+                <span className="truncate">REST Controllers</span>
+              </div>
+              <div className="flex items-center gap-1.5 rounded bg-emerald-950/30 border border-emerald-500/20 px-2 py-1 text-emerald-200">
+                <Database size={11} className="text-emerald-400 shrink-0" />
+                <span className="truncate">Spring Data JPA / ORM</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1 py-0.5 text-[11px] text-emerald-400/80">
+            <ArrowDown size={13} className="text-emerald-400 shrink-0" />
+            <span>JPA / Hibernate</span>
+            <ArrowDown size={13} className="text-emerald-400 shrink-0" />
+          </div>
+
+          {/* Database */}
+          <div className="flex w-full items-center justify-between rounded-lg border border-emerald-400/30 bg-emerald-950/30 px-3 py-2">
+            <span className="flex items-center gap-2 font-semibold text-emerald-200">
+              <Database size={14} className="text-emerald-400 shrink-0" />
+              MySQL Database
+            </span>
+            <span className="text-[10px] text-slate-400">Persistent Storage</span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-4 sm:p-6">
       <div className="flex flex-col items-center gap-3">
@@ -119,25 +194,5 @@ export default function ArchitectureDiagram() {
         </div>
       </div>
     </div>
-  )
-}
-
-function Zap({ size = 12, className = '' }: { size?: number; className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
   )
 }

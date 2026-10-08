@@ -7,7 +7,6 @@ import {
   Cpu,
   Database,
   Github,
-  Globe,
   Key,
   Layers,
   Lock,
@@ -381,7 +380,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <SectionBlock title="Repository & Links">
             <div className="flex flex-wrap gap-3">
               <LinkButton href={project.github} label="GitHub" icon={Github} solid />
-              {project.demo && <LinkButton href={project.demo} label="Live Demo" icon={Globe} />}
             </div>
           </SectionBlock>
         </div>

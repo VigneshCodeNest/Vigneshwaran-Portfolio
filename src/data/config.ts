@@ -11,9 +11,10 @@ export const profile = {
   phone: '+91 8637640729',
   phoneHref: 'tel:+918637640729',
   location: 'Tamil Nadu, India',
-  github: 'https://github.com/YOUR_USERNAME',
-  linkedin: 'https://linkedin.com/in/YOUR_USERNAME',
+  github: 'https://github.com/VigneshCodeNest',
+  linkedin: 'https://www.linkedin.com/in/vigneshwaranuec/?isSelfProfile=true',
   resumeUrl: '/resume/Vigneshwaran_B_Resume.pdf',
+  avatar: '/images/profile.jpg',
 }
 
 export const isPlaceholder = (url?: string): boolean => !url || url.includes('YOUR_')
