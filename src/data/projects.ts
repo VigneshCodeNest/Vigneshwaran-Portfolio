@@ -287,7 +287,7 @@ export const projects: Project[] = [
       'Add voice and audio messaging capabilities.',
       'Support automated background push notifications.',
     ],
-    github: 'YOUR_CONNECTLY_GITHUB_URL',
+    github: 'https://github.com/VigneshCodeNest/Connectly.git',
     demo: '',
     hasCustomCardVisual: true,
   },
@@ -332,7 +332,7 @@ export const projects: Project[] = [
       'Containerize the services for simpler deployment.',
       'Extend fleet health views on top of the existing monitoring APIs.',
     ],
-    github: 'YOUR_GITHUB_REPOSITORY_URL',
+    github: 'https://github.com/VigneshCodeNest/autonomous-predictive-maintenance-.git',
     demo: 'YOUR_LIVE_DEMO_URL',
   },
   {
@@ -378,7 +378,7 @@ export const projects: Project[] = [
       'Add automated tests for the generation and sentiment steps.',
       'Package the application for simpler deployment.',
     ],
-    github: 'YOUR_GITHUB_REPOSITORY_URL',
+    github: 'https://github.com/VigneshCodeNest/ECOSTREAM-LITE-main.git',
     demo: 'YOUR_LIVE_DEMO_URL',
   },
 ]
