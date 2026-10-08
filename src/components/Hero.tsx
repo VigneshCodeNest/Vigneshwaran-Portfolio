@@ -92,7 +92,9 @@ export default function Hero() {
             </m.a>
             <m.a
               href={profile.resumeUrl}
-              download
+              download="Vigneshwaran_B_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className={`${btn} border border-white/15 text-slate-200 transition-colors hover:border-white/30 hover:text-white`}
