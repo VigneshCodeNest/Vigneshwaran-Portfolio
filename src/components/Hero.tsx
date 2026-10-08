@@ -1,5 +1,5 @@
 import { m, type MotionProps } from 'framer-motion'
-import { Download } from 'lucide-react'
+import { Download, Eye } from 'lucide-react'
 import { profile } from '../data/config'
 import CodeCard from './CodeCard'
 import SocialLinks from './ui/SocialLinks'
@@ -93,14 +93,23 @@ export default function Hero() {
             <m.a
               href={profile.resumeUrl}
               download="Vigneshwaran_B_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className={`${btn} border border-white/15 text-slate-200 transition-colors hover:border-white/30 hover:text-white`}
             >
               <Download size={16} aria-hidden="true" />
               Download Resume
+            </m.a>
+            <m.a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className={`${btn} border border-white/15 text-slate-200 transition-colors hover:border-cyan-400/40 hover:text-cyan-200`}
+            >
+              <Eye size={16} aria-hidden="true" />
+              View Resume
             </m.a>
           </m.div>
 
