@@ -6,10 +6,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    width: 100%;
   }
   body {
     @apply bg-ink-950 font-sans text-slate-300 antialiased;
-    overflow-x: clip;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   ::selection {
     background: rgba(34, 211, 238, 0.3);
@@ -21,22 +26,22 @@
     border-radius: 6px;
   }
   section[id] {
-    scroll-margin-top: 4.5rem;
+    scroll-margin-top: 5rem;
   }
 }
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-6xl px-4 min-[400px]:px-5 sm:px-8;
   }
   .section-y {
-    @apply py-20 sm:py-28;
+    @apply py-16 sm:py-24 lg:py-28;
   }
   .card {
     @apply rounded-2xl border border-white/10 bg-ink-800/70;
   }
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-200;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-200;
   }
   .icon-tile {
     @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/20;
@@ -73,6 +78,15 @@
     .timeline-dot {
       left: calc(-2.5rem - 6.5px);
     }
+  }
+
+  /* Hide scrollbar for horizontal category filter on mobile */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 

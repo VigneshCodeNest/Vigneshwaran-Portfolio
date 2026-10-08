@@ -15,10 +15,10 @@ export default function About() {
           />
         </Reveal>
 
-        <div className="mt-12 grid items-start gap-8 lg:grid-cols-12">
+        <div className="mt-10 sm:mt-12 grid items-start gap-8 lg:grid-cols-12">
           {/* Profile Picture Card */}
           <Reveal className="lg:col-span-4">
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-ink-900/80 p-3 shadow-2xl shadow-black/60 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow">
+            <div className="group relative mx-auto max-w-[280px] min-[400px]:max-w-[320px] sm:max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-ink-900/80 p-3 shadow-2xl shadow-black/60 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow lg:max-w-none">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-ink-950">
                 <img
                   src={profile.avatar}
@@ -37,19 +37,19 @@ export default function About() {
 
           {/* Bio & Paragraphs */}
           <div className="space-y-6 lg:col-span-8">
-            <Reveal className="space-y-4 text-base leading-relaxed text-slate-300">
+            <Reveal className="space-y-4 text-sm sm:text-base leading-relaxed text-slate-300">
               {aboutParagraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </Reveal>
 
             {/* Highlights Grid */}
-            <div className="grid gap-4 sm:grid-cols-3 pt-2">
+            <div className="grid gap-3 min-[480px]:grid-cols-2 sm:grid-cols-3 pt-2">
               {aboutHighlights.map(({ title, detail, icon: Icon }, i) => (
-                <Reveal key={title} delay={0.08 * i}>
+                <Reveal key={title} delay={0.06 * i} className={i === 2 ? 'min-[480px]:col-span-2 sm:col-span-1' : ''}>
                   <div className="card h-full flex flex-col justify-between p-4 transition-colors hover:border-cyan-400/30">
                     <span className="icon-tile mb-3">
-                      <Icon size={20} aria-hidden="true" />
+                      <Icon size={18} aria-hidden="true" />
                     </span>
                     <div>
                       <h3 className="font-semibold text-white text-sm">{title}</h3>

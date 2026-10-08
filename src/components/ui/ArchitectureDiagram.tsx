@@ -7,24 +7,24 @@ interface ArchitectureDiagramProps {
 export default function ArchitectureDiagram({ compact = false }: ArchitectureDiagramProps) {
   if (compact) {
     return (
-      <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-3.5 sm:p-4">
-        <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+      <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-3 sm:p-4">
+        <h4 className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-cyan-300">
           Real-Time Architecture
         </h4>
         <div className="flex flex-col items-center gap-1.5 text-xs font-mono">
           {/* Frontend */}
-          <div className="flex w-full items-center justify-between rounded-lg border border-cyan-400/30 bg-cyan-950/30 px-3 py-2">
-            <span className="flex items-center gap-2 font-semibold text-cyan-200">
+          <div className="flex w-full items-center justify-between gap-2 rounded-lg border border-cyan-400/30 bg-cyan-950/30 px-2.5 py-1.5 sm:px-3 sm:py-2">
+            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold text-cyan-200 text-[11px] sm:text-xs">
               <Globe size={14} className="text-cyan-400 shrink-0" />
               React.js Frontend
             </span>
-            <span className="text-[10px] text-slate-400">UI / WebSocket Client</span>
+            <span className="text-[10px] text-slate-400">UI / WebSocket</span>
           </div>
 
-          <div className="flex items-center gap-1 py-0.5 text-[11px] text-slate-400">
-            <ArrowDown size={13} className="text-cyan-400 shrink-0" />
+          <div className="flex items-center gap-1 py-0.5 text-[10px] sm:text-[11px] text-slate-400">
+            <ArrowDown size={12} className="text-cyan-400 shrink-0" />
             <span>REST API / WebSocket</span>
-            <ArrowDown size={13} className="text-cyan-400 shrink-0" />
+            <ArrowDown size={12} className="text-cyan-400 shrink-0" />
           </div>
 
           {/* Spring Boot Backend Container */}
@@ -37,7 +37,7 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
               <span className="text-[10px] text-slate-400">Java Core</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-1.5 text-[11px]">
+            <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-1.5 text-[10px] min-[360px]:text-[11px]">
               <div className="flex items-center gap-1.5 rounded bg-purple-950/30 border border-purple-500/20 px-2 py-1 text-purple-200">
                 <Shield size={11} className="text-purple-400 shrink-0" />
                 <span className="truncate">Spring Security / JWT</span>
@@ -52,24 +52,24 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
               </div>
               <div className="flex items-center gap-1.5 rounded bg-emerald-950/30 border border-emerald-500/20 px-2 py-1 text-emerald-200">
                 <Database size={11} className="text-emerald-400 shrink-0" />
-                <span className="truncate">Spring Data JPA / ORM</span>
+                <span className="truncate">Spring Data JPA</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-1 py-0.5 text-[11px] text-emerald-400/80">
-            <ArrowDown size={13} className="text-emerald-400 shrink-0" />
+          <div className="flex items-center gap-1 py-0.5 text-[10px] sm:text-[11px] text-emerald-400/80">
+            <ArrowDown size={12} className="text-emerald-400 shrink-0" />
             <span>JPA / Hibernate</span>
-            <ArrowDown size={13} className="text-emerald-400 shrink-0" />
+            <ArrowDown size={12} className="text-emerald-400 shrink-0" />
           </div>
 
           {/* Database */}
-          <div className="flex w-full items-center justify-between rounded-lg border border-emerald-400/30 bg-emerald-950/30 px-3 py-2">
-            <span className="flex items-center gap-2 font-semibold text-emerald-200">
+          <div className="flex w-full items-center justify-between gap-2 rounded-lg border border-emerald-400/30 bg-emerald-950/30 px-2.5 py-1.5 sm:px-3 sm:py-2">
+            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold text-emerald-200 text-[11px] sm:text-xs">
               <Database size={14} className="text-emerald-400 shrink-0" />
               MySQL Database
             </span>
-            <span className="text-[10px] text-slate-400">Persistent Storage</span>
+            <span className="text-[10px] text-slate-400">Persistence</span>
           </div>
         </div>
       </div>
@@ -77,46 +77,46 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
   }
 
   return (
-    <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-4 sm:p-6">
+    <div className="w-full rounded-xl border border-white/10 bg-ink-950/60 p-3.5 sm:p-6">
       <div className="flex flex-col items-center gap-3">
         {/* Tier 1: Frontend */}
-        <div className="flex w-full max-w-md items-center justify-between gap-3 rounded-xl border border-cyan-400/30 bg-cyan-950/20 px-4 py-3 shadow-sm">
+        <div className="flex w-full max-w-md items-center justify-between gap-3 rounded-xl border border-cyan-400/30 bg-cyan-950/20 px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-sm">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-400/20 text-cyan-300">
               <Globe size={18} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">React.js Frontend</h4>
-              <p className="text-[11px] text-slate-400">Client UI, State Management, WebSocket Client</p>
+              <h4 className="text-xs sm:text-sm font-bold text-white">React.js Frontend</h4>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">Client UI, State, WebSocket Client</p>
             </div>
           </div>
-          <span className="rounded bg-cyan-400/10 px-2 py-0.5 font-mono text-[10px] text-cyan-300">Client Tier</span>
+          <span className="rounded bg-cyan-400/10 px-2 py-0.5 font-mono text-[10px] text-cyan-300 shrink-0">Client Tier</span>
         </div>
 
         {/* Communication Arrow */}
-        <div className="flex items-center gap-2 py-0.5 text-xs font-mono text-cyan-300/80">
-          <ArrowDown size={15} className="text-cyan-400" aria-hidden="true" />
+        <div className="flex items-center gap-2 py-0.5 text-[11px] sm:text-xs font-mono text-cyan-300/80">
+          <ArrowDown size={14} className="text-cyan-400" aria-hidden="true" />
           <span>REST API / WebSocket Protocol</span>
-          <ArrowDown size={15} className="text-cyan-400" aria-hidden="true" />
+          <ArrowDown size={14} className="text-cyan-400" aria-hidden="true" />
         </div>
 
         {/* Tier 2: Spring Boot Backend Box */}
-        <div className="w-full rounded-xl border border-white/15 bg-ink-900/80 p-4 shadow-lg sm:p-5">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="w-full rounded-xl border border-white/15 bg-ink-900/80 p-3.5 sm:p-5 shadow-lg">
+          <div className="flex items-center justify-between border-b border-white/10 pb-2.5 sm:pb-3">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-400/20 text-sky-300">
                 <Server size={18} aria-hidden="true" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white">Spring Boot Backend</h4>
-                <p className="text-[11px] text-slate-400">Java Enterprise Core Engine & Business Logic</p>
+                <h4 className="text-xs sm:text-sm font-bold text-white">Spring Boot Backend</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-400">Java Enterprise Core Engine &amp; Logic</p>
               </div>
             </div>
-            <span className="rounded bg-sky-400/10 px-2 py-0.5 font-mono text-[10px] text-sky-300">Application Tier</span>
+            <span className="rounded bg-sky-400/10 px-2 py-0.5 font-mono text-[10px] text-sky-300 shrink-0">Application Tier</span>
           </div>
 
           {/* Inner Subsystem Grid */}
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-3.5 sm:mt-4 grid gap-2.5 sm:gap-3 sm:grid-cols-2">
             {/* Spring Security + JWT */}
             <div className="rounded-lg border border-purple-500/20 bg-purple-950/20 p-3">
               <div className="flex items-center gap-2 text-xs font-semibold text-purple-300">
@@ -125,7 +125,7 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
               </div>
               <div className="mt-2 flex items-center gap-1.5 pl-3 border-l-2 border-purple-400/30 text-[11px] text-slate-300">
                 <Key size={12} className="text-purple-400" />
-                <span>JWT Authentication & BCrypt</span>
+                <span>JWT Authentication &amp; BCrypt</span>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
                 <Network size={14} />
                 <span>REST Controllers</span>
               </div>
-              <p className="mt-1 text-[11px] text-slate-400">User, Connection, Profile & Message Endpoints</p>
+              <p className="mt-1 text-[11px] text-slate-400">User, Connection, Profile &amp; Message Endpoints</p>
             </div>
 
             {/* WebSocket Handler */}
@@ -146,7 +146,7 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
               </div>
               <div className="mt-2 flex items-center gap-1.5 pl-3 border-l-2 border-cyan-400/30 text-[11px] text-slate-300">
                 <Zap size={12} className="text-cyan-400" />
-                <span>Real-Time Messaging & Status Broadcasts</span>
+                <span>Real-Time Messaging &amp; Status Broadcasts</span>
               </div>
             </div>
 
@@ -156,7 +156,7 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
                 <Layers size={14} className="text-slate-400" />
                 <span>Service Layer</span>
               </div>
-              <p className="mt-1 text-[11px] text-slate-400">Business Logic, Request Validation & Lifecycle</p>
+              <p className="mt-1 text-[11px] text-slate-400">Business Logic, Request Validation &amp; Lifecycle</p>
             </div>
 
             {/* Spring Data JPA & Hibernate */}
@@ -164,33 +164,33 @@ export default function ArchitectureDiagram({ compact = false }: ArchitectureDia
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="flex items-center gap-2 text-xs font-semibold text-emerald-300">
                   <Database size={14} />
-                  <span>Spring Data JPA & Hibernate ORM</span>
+                  <span>Spring Data JPA &amp; Hibernate ORM</span>
                 </div>
-                <span className="text-[11px] text-slate-400">Data Access & Object-Relational Mapping</span>
+                <span className="text-[11px] text-slate-400">Data Access &amp; Object-Relational Mapping</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Database Arrow */}
-        <div className="flex items-center gap-2 py-0.5 text-xs font-mono text-emerald-400/80">
-          <ArrowDown size={15} className="text-emerald-400" aria-hidden="true" />
-          <span>Persistence & Queries</span>
-          <ArrowDown size={15} className="text-emerald-400" aria-hidden="true" />
+        <div className="flex items-center gap-2 py-0.5 text-[11px] sm:text-xs font-mono text-emerald-400/80">
+          <ArrowDown size={14} className="text-emerald-400" aria-hidden="true" />
+          <span>Persistence &amp; Queries</span>
+          <ArrowDown size={14} className="text-emerald-400" aria-hidden="true" />
         </div>
 
         {/* Tier 3: MySQL Database */}
-        <div className="flex w-full max-w-md items-center justify-between gap-3 rounded-xl border border-emerald-400/30 bg-emerald-950/20 px-4 py-3 shadow-sm">
+        <div className="flex w-full max-w-md items-center justify-between gap-3 rounded-xl border border-emerald-400/30 bg-emerald-950/20 px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-sm">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-400/20 text-emerald-300">
               <Database size={18} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">MySQL Database</h4>
-              <p className="text-[11px] text-slate-400">Users, Messages, Connections, Media Records</p>
+              <h4 className="text-xs sm:text-sm font-bold text-white">MySQL Database</h4>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">Users, Messages, Connections, Media Records</p>
             </div>
           </div>
-          <span className="rounded bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] text-emerald-300">Storage Tier</span>
+          <span className="rounded bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] text-emerald-300 shrink-0">Storage Tier</span>
         </div>
       </div>
     </div>

@@ -15,19 +15,19 @@ export default function Contact() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Reveal delay={0}>
             <a
               href={`mailto:${profile.email}`}
-              className="card flex h-full flex-col justify-between p-6 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow"
+              className="card flex h-full flex-col justify-between p-5 sm:p-6 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow active:scale-[0.99]"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3.5 sm:gap-4">
                 <span className="icon-tile">
-                  <Mail size={20} aria-hidden="true" />
+                  <Mail size={18} aria-hidden="true" />
                 </span>
                 <div className="min-w-0 flex-1">
                   <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">Email</span>
-                  <span className="mt-1 block text-sm font-medium text-white break-words">
+                  <span className="mt-1 block text-xs min-[360px]:text-sm font-medium text-white break-all">
                     {profile.email}
                   </span>
                 </div>
@@ -35,35 +35,35 @@ export default function Contact() {
             </a>
           </Reveal>
 
-          <Reveal delay={0.08}>
+          <Reveal delay={0.06}>
             <a
               href={profile.phoneHref}
-              className="card flex h-full flex-col justify-between p-6 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow"
+              className="card flex h-full flex-col justify-between p-5 sm:p-6 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow active:scale-[0.99]"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3.5 sm:gap-4">
                 <span className="icon-tile">
-                  <Phone size={20} aria-hidden="true" />
+                  <Phone size={18} aria-hidden="true" />
                 </span>
                 <div>
                   <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">Phone</span>
-                  <span className="mt-1 block font-medium text-white">{profile.phone}</span>
+                  <span className="mt-1 block text-sm font-medium text-white">{profile.phone}</span>
                 </div>
               </div>
             </a>
           </Reveal>
 
-          <Reveal delay={0.16} className="sm:col-span-2 lg:col-span-1">
-            <div className="card flex h-full flex-col justify-between p-6">
-              <div className="flex items-center gap-4">
+          <Reveal delay={0.12} className="sm:col-span-2 lg:col-span-1">
+            <div className="card flex h-full flex-col justify-between p-5 sm:p-6">
+              <div className="flex items-center gap-3.5 sm:gap-4">
                 <span className="icon-tile">
-                  <MapPin size={20} aria-hidden="true" />
+                  <MapPin size={18} aria-hidden="true" />
                 </span>
                 <div>
                   <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">Location</span>
-                  <span className="mt-1 block font-medium text-white">{profile.location}</span>
+                  <span className="mt-1 block text-sm font-medium text-white">{profile.location}</span>
                 </div>
               </div>
-              <p className="mt-4 text-xs text-slate-400">Open to on-site & remote opportunities</p>
+              <p className="mt-3 text-xs text-slate-400">Open to on-site &amp; remote opportunities</p>
             </div>
           </Reveal>
         </div>
