@@ -44,7 +44,8 @@ export default function Certifications() {
   }, [selectedCert, closePreview])
 
   return (
-    <section id="certifications" aria-labelledby="certifications-title" className="section-y">
+    <section id="certifications" aria-labelledby="certifications-title" className="section-y relative">
+      <span id="certification" className="pointer-events-none absolute -top-20" aria-hidden="true" />
       <div className="container-x">
         <Reveal>
           <SectionHeading

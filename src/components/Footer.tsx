@@ -6,7 +6,10 @@ const footerLinks = navLinks.filter((l) => l.id !== 'education')
 export default function Footer() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
-    const target = document.getElementById(id)
+    const target =
+      document.getElementById(id) ||
+      (id === 'certification' ? document.getElementById('certifications') : null) ||
+      (id === 'certifications' ? document.getElementById('certification') : null)
     if (id === 'home' || !target) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {

@@ -33,7 +33,10 @@ export default function Navbar() {
     e.preventDefault()
     setOpen(false)
 
-    const target = document.getElementById(id)
+    const target =
+      document.getElementById(id) ||
+      (id === 'certification' ? document.getElementById('certifications') : null) ||
+      (id === 'certifications' ? document.getElementById('certification') : null)
     if (id === 'home' || !target) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
