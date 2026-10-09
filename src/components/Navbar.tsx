@@ -33,15 +33,26 @@ export default function Navbar() {
     e.preventDefault()
     setOpen(false)
 
-    const target =
-      document.getElementById(id) ||
-      (id === 'certification' ? document.getElementById('certifications') : null) ||
-      (id === 'certifications' ? document.getElementById('certification') : null)
-    if (id === 'home' || !target) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    } else {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    // Defer scroll to next animation frame so click/touch event on collapsing drawer completes
+    requestAnimationFrame(() => {
+      const target =
+        document.getElementById(id) ||
+        (id === 'certification' ? document.getElementById('certifications') : null) ||
+        (id === 'certifications' ? document.getElementById('certification') : null)
+
+      if (id === 'home' || !target) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        const headerOffset = 80
+        const elementPosition = target.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }
+    })
 
     if (window.history.pushState) {
       window.history.pushState(null, '', `#${id}`)
@@ -120,7 +131,7 @@ export default function Navbar() {
           <m.nav
             id="mobile-menu"
             aria-label="Mobile"
-            className="max-h-[80svh] overflow-y-auto border-t border-white/10 bg-ink-950/95 backdrop-blur-xl md:hidden"
+            className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-ink-950/95 backdrop-blur-xl md:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
