@@ -6,13 +6,10 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-    width: 100%;
   }
   body {
     @apply bg-ink-950 font-sans text-slate-300 antialiased;
-    overflow-x: hidden;
-    width: 100%;
+    overflow-x: clip;
     min-height: 100%;
     -webkit-tap-highlight-color: transparent;
   }

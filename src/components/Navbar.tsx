@@ -29,6 +29,22 @@ export default function Navbar() {
     }
   }, [open])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
+    setOpen(false)
+
+    const target = document.getElementById(id)
+    if (id === 'home' || !target) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
+    if (window.history.pushState) {
+      window.history.pushState(null, '', `#${id}`)
+    }
+  }
+
   const linkClass = (id: string) =>
     `rounded-lg px-2.5 py-1.5 lg:px-3 lg:py-2 text-xs lg:text-sm font-medium transition-colors ${
       active === id ? 'text-cyan-300 font-semibold' : 'text-slate-400 hover:text-white'
@@ -45,6 +61,7 @@ export default function Navbar() {
       <div className="container-x flex h-16 items-center justify-between">
         <a
           href="#home"
+          onClick={(e) => handleNavClick(e, 'home')}
           aria-label={`${profile.name}, back to top`}
           className="flex items-center gap-2.5 font-mono text-lg sm:text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-90"
         >
@@ -64,6 +81,7 @@ export default function Navbar() {
             <a
               key={link.id}
               href={`#${link.id}`}
+              onClick={(e) => handleNavClick(e, link.id)}
               aria-current={active === link.id ? 'true' : undefined}
               className={linkClass(link.id)}
             >
@@ -111,7 +129,7 @@ export default function Navbar() {
                   <li key={link.id}>
                     <a
                       href={`#${link.id}`}
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => handleNavClick(e, link.id)}
                       aria-current={active === link.id ? 'true' : undefined}
                       className={`flex min-h-11 items-center justify-between rounded-xl px-3.5 text-sm font-medium transition-colors ${
                         active === link.id
